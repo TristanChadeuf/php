@@ -16,7 +16,7 @@ $_SESSION["message"]=$_POST['message'];
 
 <?php
 $resultat="recuperation.txt";
-$valeurtableau = array(
+$valeurtableau = array(  
     $civilite= $_POST['civilite'] . "\n",
     $Prenom= $_POST['Prenom'] . "\n",
     $Nom= $_POST['Nom']. "\n",
@@ -64,41 +64,41 @@ if(empty ($_POST['Nom'])){
 
     <div>
         <label for="Prenom"></label>
-        <input placeholder=Prenom type="text" name="Prenom" value = "<?php echo $_SESSION["Prenom"]?>">
-        <span><?php echo $erreurprenom ?></span>
+        <input placeholder=Prenom type="text" name="Prenom" value = "<?php echo  $_SESSION["Prenom"]?>">
+        <span><?php echo "<p style='color:red;'>" . $erreurprenom ?></span>
     </div>
 
     <div>
         <label for="Nom"></label>
         <input placeholder=Nom type="text" name="Nom" value="<?php echo $_SESSION["Nom"]?>">
-        <span><?php echo $erreurnom ?></span>
+        <span><?php echo "<p style='color:red;'>" . $erreurnom ?></span>
     </div>
 
     <div>
         <label for="email"></label>
         <input   placeholder=Email type="email" name="email" value="<?php echo $_SESSION["email"]?>">
-        <span><?php echo $erreuremail?></span>
+        <span><?php echo "<p style='color:red;'>" . $erreuremail?></span>
     </div>
 
                     <div>
                         <input for=choix type="radio" name="RaisondeContact" value="achat">
                         <label for="choix">Achat</label>
-                        <span><?php echo $erreurradio?></span>
+                        <span><?php echo "<p style='color:red;'>" . $erreurradio?></span>
                     </div>
                     <div>
                         <input for=choix type="radio" name="RaisondeContact" value="vente">
                         <label for="choix">Vente</label>
-                        <span><?php echo $erreurradio?></span>
+                        <span><?php echo "<p style='color:red;'>" . $erreurradio?></span>
                     </div>
                     <div>
                         <input for=choix type="radio" name="RaisondeContact">
                         <label for="choix">Information</label>
-                        <span><?php echo $erreurradio?></span>
+                        <span><?php echo "<p style='color:red;'>" . $erreurradio?></span>
                     </div>
     <div>
         <label for="message"></label>
         <textarea placeholder="Commentaire" name="message"></textarea>
-        <span><?php echo $erreurmessage?></span>
+        <span><?php echo "<p style='color:red;'>" . $erreurmessage?></span>
     </div>
 
     <button type="submit">Envoyer</button>
