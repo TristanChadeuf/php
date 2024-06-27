@@ -12,21 +12,21 @@ include 'header.php';
 
 function entrainement($age){
     if ($age>=18){
-        echo "Tu peux acheter de l'alcool<br>";
+        echo $age . "ans ". "Tu peux acheter de l'alcool<br><br>";
     }else{
-        echo "Demande a tes parents de t'acheter de l'alcool<br>";
+        echo $age . "ans" . "Demande a tes parents de t'acheter de l'alcool<br><br>";
     }
 }
-entrainement(18);
+entrainement(17);
 
 
 function alcool(){
 for($i=1;$i<=50;$i++){
    if($i<=17){
     $age=$i;
-    echo $i ." ". "ans ".  $age="Tu es mineur<br>";
+    echo $i ." ". "ans ".  $age="Tu es mineur<br><br>";
    }else{
-    echo $i ." ". "ans"  . $age="Tu es majeur<br>";
+    echo  $i ." ". "ans"  . $age="Tu es majeur<br><br>";
    }    
 }
 

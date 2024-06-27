@@ -18,13 +18,13 @@ $_SESSION["message"]=$_POST['message'];
 $resultat="recuperation.txt";
 $valeurtableau = array(  
     $civilite= $_POST['civilite'] . "\n",
-    $Prenom= $_POST['Prenom'] . "\n",
+    $Prenom= filter_INPUT(INPUT_POST, $_POST['Prenom']) . "\n",
     $Nom= $_POST['Nom']. "\n",
     $email=$_POST['email']. "\n",
     $RaisondeContact=$_POST['RaisondeContact']. "\n",
     $message=$_POST['message']. "\n",
     );
-file_put_contents($resultat, $valeurtableau, FILE_APPEND);
+
 
 
 $title = "Contact";
@@ -33,22 +33,30 @@ $erreurprenom = $erreurnom = $erreurcivilite = $erreuremail = $erreurradio = $er
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
-if(empty ($_POST['Prenom'])){
+if(filter_has_var(INPUT_POST,$_POST['Prenom'])   && empty ($_POST['Prenom'])){
         $erreurprenom= "Prenom manquant !" ;
 }
 if(empty ($_POST['Nom'])){
         $erreurnom="Nom manquant";
  }
- if(empty ($_POST['email'])){
+ if(empty ($_POST ["email"])){
     $erreuremail="Adresse mail pas valide";
  }
+ 
  if(empty ($_POST['RaisondeContact'])){
     $erreurradio="Clickez sur un choix";
  }
  if(strlen(($_POST['message']<5))){
     $erreurmessage="Minimum 5 caracteres";
  }
+
+if ($erreurprenom=="" && $erreurnom==""&& $erreurcivilite =="" && $erreuremail==""&&  $erreurradio ==""&& $erreurmessage=="" ){
+    file_put_contents($resultat, $valeurtableau, FILE_APPEND);
 }
+
+
+}
+
 
 ?>
 <form action="index.php?contenu=contact" method="post">
