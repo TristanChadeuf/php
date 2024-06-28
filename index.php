@@ -1,6 +1,7 @@
 <?php
 
 
+
 if ($_GET["contenu"]){
 
     $tout = ($_GET["contenu"]);

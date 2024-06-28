@@ -1,8 +1,17 @@
 
-.navBar img{
+nav img{
 width: 10%;
 
 }
+
+
+.textecentre{
+  display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+}
+
 
 .navBar{
 width: 100%;
@@ -16,13 +25,14 @@ h1{
     width: 100%;
     height: 20vh;
     text-align: center;
+
 }
 .footer{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 5%;
+    padding: 1%;
 }
 .footer p{
     font-size: 3rem;
